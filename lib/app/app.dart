@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_factory/features/on_board_screen/ui/screens/index.dart';
 import 'package:food_factory/shared/infrastructure/index.dart';
 import 'package:food_factory/shared/utils/color_utils.dart';
 

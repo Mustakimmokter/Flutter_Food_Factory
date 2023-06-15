@@ -36,6 +36,7 @@ flutter:
 
   assets:
     - assets/onboard_illustrations/
+    - assets/icons/
 
 
   fonts:

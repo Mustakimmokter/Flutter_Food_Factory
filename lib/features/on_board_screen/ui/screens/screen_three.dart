@@ -12,7 +12,7 @@ class OnBoardScreenThree extends StatelessWidget {
         skip: (){},
         header: 'Enjoy delicious foods\n and have fun',
         next: (){
-          Navigator.pushNamedAndRemoveUntil(context, AppRoute.onboardOne, (route) => false);
+          Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
         },
         illustration: 'onboard_illustrations/onBoard_three_illustration.svg',
       ),
