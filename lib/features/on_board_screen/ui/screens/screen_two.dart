@@ -9,7 +9,9 @@ class OnBoardScreenTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnboardBody(
-        skip: (){},
+        skip: (){
+          Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
+        },
         header: 'Get fastest delivery\nat your door step',
         next: (){
           Navigator.pushNamedAndRemoveUntil(context, AppRoute.onboardThree, (route) => false);

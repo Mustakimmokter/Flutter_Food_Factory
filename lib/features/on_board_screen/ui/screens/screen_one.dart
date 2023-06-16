@@ -8,7 +8,9 @@ class OnBoardScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnboardBody(
-        skip: (){},
+        skip: (){
+          Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
+        },
         header: 'Find your favorite food\nfrom top restaurants',
         next: (){
           Navigator.pushNamedAndRemoveUntil(context, AppRoute.onboardTwo, (route) => false);

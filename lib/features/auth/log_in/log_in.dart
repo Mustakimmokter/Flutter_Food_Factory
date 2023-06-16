@@ -58,7 +58,9 @@ class LogInScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: CustomTextButton(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, AppRoute.forgetPasswordScreen);
+                          },
                           title: 'Forget password',
                         ),
                       ),

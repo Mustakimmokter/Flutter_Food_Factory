@@ -9,7 +9,9 @@ class OnBoardScreenThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnboardBody(
-        skip: (){},
+        skip: (){
+          Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
+        },
         header: 'Enjoy delicious foods\n and have fun',
         next: (){
           Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
