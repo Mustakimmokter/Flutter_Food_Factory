@@ -2,6 +2,9 @@ export 'custom_page_transition.dart';
 export 'custom_text.dart';
 export 'custom_svg.dart';
 export 'custom_text_field.dart';
+export 'profile_container.dart';
+export 'custom_bottom_sheet.dart';
+export 'custom_container.dart';
 
 
 // Button

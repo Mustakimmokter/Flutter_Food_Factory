@@ -13,7 +13,8 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.inputFormatters,
     this.prefix,
-    this.suffix
+    this.suffix,
+    this.keyboardType,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -23,6 +24,7 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
   final Widget? suffix,prefix;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class CustomTextField extends StatelessWidget {
       obscuringCharacter: obscureCharacter!,
       inputFormatters: inputFormatters,
       validator: validator,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(left: 16),
         hintText: hintText,

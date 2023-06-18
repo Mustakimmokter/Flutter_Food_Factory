@@ -32,14 +32,28 @@ class OTPScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   OTPField(),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 20),
                   FooterButton(
                     onTap: (){},
                     title: 'Verify',
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const CustomText(
+                  text: 'Didn\'t receive a OTP?',
+                  fontWeight: FontWeight.w400,
+                ),
+                CustomTextButton(
+                  onTap: (){
+                  },
+                  title: 'OTP Resend',
+                  isUnderline: true,
+                ),
+              ],
             ),
             const SizedBox(),
           ],

@@ -13,6 +13,7 @@ class OTPField extends StatelessWidget {
       appContext: context,
       length: 5,
       autoFocus: true,
+      keyboardType: TextInputType.number,
       obscureText: false,
       cursorColor: primaryBrandColor,
       animationType: AnimationType.fade,

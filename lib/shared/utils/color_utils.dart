@@ -7,6 +7,7 @@ const Color greyBackground = Color(0xffE5E5E5);
 const Color whiteBackground = Color(0xffffffff);
 const Color greyColor = Color(0xff858585);
 const Color blackColor = Color(0xff0B0B0B);
+const Color shadowColor = Color(0x1A000000);
 
 
 MaterialColor customMaterialColor(Color color) {

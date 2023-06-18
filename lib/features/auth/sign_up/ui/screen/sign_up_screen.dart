@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_factory/features/auth/sign_up/ui/component/index.dart';
+import 'package:food_factory/shared/infrastructure/index.dart';
 import 'package:food_factory/shared/utils/index.dart';
 import 'package:food_factory/shared/widgets/index.dart';
 
@@ -47,6 +48,7 @@ class SignUpScreen extends StatelessWidget {
                       CustomTextField(
                         controller: phoneCTLR,
                         hintText: 'Phone number',
+                        keyboardType: TextInputType.number,
                         onChanged: (phn){
                           phn = phoneCTLR.text;
                         },
@@ -80,7 +82,9 @@ class SignUpScreen extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                       CustomTextButton(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.pushNamedAndRemoveUntil(context, AppRoute.logInScreen, (route) => false);
+                        },
                         title: 'Log in',
                       ),
                     ],

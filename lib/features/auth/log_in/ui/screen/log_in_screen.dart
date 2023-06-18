@@ -42,6 +42,7 @@ class LogInScreen extends StatelessWidget {
                       CustomTextField(
                         controller: phoneCTLR,
                         hintText: 'Phone number',
+                        keyboardType: TextInputType.number,
                         onChanged: (phn){
                           phn = phoneCTLR.text;
                         },
@@ -66,7 +67,9 @@ class LogInScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 35),
                       FooterButton(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.pushNamedAndRemoveUntil(context, AppRoute.homeScreen, (route) => false);
+                        },
                         title: 'Log in',
                       ),
                     ],

@@ -9,7 +9,8 @@ class CustomTextButton extends StatelessWidget {
     this.padding = 5,
     this.color = primaryBrandColor,
     this.size = 15,
-    this.fontWeight = FontWeight.w500
+    this.fontWeight = FontWeight.w500,
+    this.isUnderline = false,
   }) : super(key: key);
 
   final VoidCallback onTap;
@@ -17,6 +18,7 @@ class CustomTextButton extends StatelessWidget {
   final double? padding, size;
   final Color? color;
   final FontWeight? fontWeight;
+  final bool? isUnderline;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class CustomTextButton extends StatelessWidget {
             fontFamily: 'DM_Sans',
             fontWeight: fontWeight,
             fontSize: size,
+            decoration: isUnderline! ? TextDecoration.underline: TextDecoration.none,
           ),
         ),
       ),

@@ -34,6 +34,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   CustomTextField(
                     controller: phoneCTLR,
                     hintText: 'Phone number',
+                    keyboardType: TextInputType.number,
                     onChanged: (phn){
                       phn = phoneCTLR.text;
                     },

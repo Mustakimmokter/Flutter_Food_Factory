@@ -38,6 +38,9 @@ flutter:
   assets:
     - assets/onboard_illustrations/
     - assets/icons/
+    - assets/images/
+    - assets/icons/food_items/
+    - assets/icons/popular_foods/
 
 
   fonts:
