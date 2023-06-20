@@ -1,15 +1,21 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:food_factory/features/home/ui/component/index.dart';
 import 'package:food_factory/shared/constant/index.dart';
 import 'package:food_factory/shared/utils/index.dart';
 import 'package:food_factory/shared/widgets/index.dart';
 
+
+
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+   const HomeScreen({Key? key}) : super(key: key);
+
+   final int _itemCount=2;
+
 
   @override
   Widget build(BuildContext context) {
+    final pageController = PageController(viewportFraction: 0.9);
     SizeUtils().init(context);
     return Scaffold(
       backgroundColor: greyBackground,
@@ -46,24 +52,30 @@ class HomeScreen extends StatelessWidget {
                  // Popular foods
                  SizedBox(
                    height: 260,
+                   width: SizeUtils.screenWidth,
                    child: PageView.builder(
-                     controller: PageController(viewportFraction: .55,),
-                     padEnds: false,
+                     controller: pageController,
+                     //scrollDirection: Axis.horizontal,
+                     //padEnds: false,
                      //reverse: true,
-                     itemCount: 5,
+                     itemCount: _itemCount,
                      itemBuilder: (context, index) {
-                       return CustomContainer(
-                         margin: EdgeInsets.only(left: 20,top: 20,bottom: 20,right: index == 4? 20:0),
-                         height: 200,
+                       return  CustomContainer(
+                         margin: EdgeInsets.only(top: 20,bottom: 20,left: 20),
+                         //margin: EdgeInsets.only(top: 20,bottom: 20,left: 20,right: 20,),
+                         //height: 200,
+                         //width: 160,
                          color: whiteColor,
                          isShadow: true,
                          blurRadius: 20,
-                         offset: Offset(5, 5),
+                         offset: const Offset(5, 5),
                        );
                      },
 
                    ),
                  ),
+                 const SizedBox(height: 20),
+                 _slider(),
                  Container(
                    margin: EdgeInsets.all(20),
                    height: 200,
@@ -77,13 +89,48 @@ class HomeScreen extends StatelessWidget {
                ],
              ),
            ),
-         )
+         ),
         ],
       ),
       drawer: Container(
         color: whiteBackground,
         width: SizeUtils.screenWidth - SizeUtils.screenWidth / 4,
       ),
+    );
+  }
+
+
+  Widget _slider (){
+    return CarouselSlider.builder(
+      itemCount: 5,
+        itemBuilder: (context, index, realIndex) {
+          return CustomContainer(
+            margin: EdgeInsets.only(top: 20,bottom: 20,left: 10,right: 10),
+            height: 200,
+            //width: 160,
+            color: whiteColor,
+            isShadow: true,
+            blurRadius: 20,
+            offset: Offset(5, 5),
+          );
+        },
+        options: CarouselOptions(
+          height: 270,
+          //aspectRatio: 16/9,
+          viewportFraction: 0.5,
+          padEnds: false,
+          //initialPage: 0,
+          enableInfiniteScroll: false,
+          //reverse: false,
+          //autoPlay: true,
+          //autoPlayInterval: Duration(seconds: 3),
+         // autoPlayAnimationDuration: Duration(milliseconds: 800),
+          //autoPlayCurve: Curves.fastOutSlowIn,
+          //enlargeCenterPage: true,
+          //enlargeFactor: 0.3,
+          aspectRatio: 16/8,
+          scrollDirection: Axis.horizontal,
+        ),
     );
   }
 }

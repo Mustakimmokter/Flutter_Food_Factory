@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_factory/features/home/ui/screen/home_screen.dart';
 import 'package:food_factory/shared/infrastructure/index.dart';
 import 'package:food_factory/shared/utils/color_utils.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: customMaterialColor(primaryBrandColor)
       ),
+      //home: CustomPageSnapping(),
       initialRoute: AppRoute.onboardOne,
       onGenerateRoute: AppRoute.onGenerateRoute,
     );

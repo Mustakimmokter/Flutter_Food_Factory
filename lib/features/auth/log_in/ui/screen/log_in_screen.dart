@@ -68,7 +68,7 @@ class LogInScreen extends StatelessWidget {
                       const SizedBox(height: 35),
                       FooterButton(
                         onTap: (){
-                          Navigator.pushNamedAndRemoveUntil(context, AppRoute.homeScreen, (route) => false);
+                          Navigator.pushNamedAndRemoveUntil(context, AppRoute.navbarController, (route) => false);
                         },
                         title: 'Log in',
                       ),
