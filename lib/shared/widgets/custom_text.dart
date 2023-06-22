@@ -7,7 +7,7 @@ class CustomText extends StatelessWidget {
     required this.text,
     this.color = blackColor,
     this.fontWeight = FontWeight.w500,
-    this.size = 16,
+    this.size = 14,
     this.letterSpace,
     this.align = TextAlign.center,
     this.overflow,

@@ -1,12 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_factory/features/auth/log_in/ui/screen/log_in_screen.dart';
-import 'package:food_factory/features/cart/ui/screen/cart_screen.dart';
 import 'package:food_factory/features/favorite/ui/screen/favorite_screen.dart';
 import 'package:food_factory/features/home/ui/screen/home_screen.dart';
 import 'package:food_factory/features/offer/ui/screen/offer_screen.dart';
 import 'package:food_factory/shared/infrastructure/index.dart';
-import 'package:food_factory/shared/navbar_controller/navbar_cubit/navabar_bloc.dart';
+import 'package:food_factory/shared/navbar_controller/navbar_cubit/navbar_bloc.dart';
 import 'package:food_factory/shared/navbar_controller/navbar_cubit/navbar_event.dart';
 import 'package:food_factory/shared/navbar_controller/navbar_cubit/navbar_state.dart';
 import 'package:food_factory/shared/widgets/navbar/index.dart';
@@ -29,9 +29,9 @@ class NavbarBody extends StatelessWidget {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    OfferScreen(),
-    SizedBox(),
-    FavoriteScreen()
+    const OfferScreen(),
+    const SizedBox(),
+    const FavoriteScreen()
   ];
 
   late NavbarBloc _navbarBloc;
@@ -45,19 +45,15 @@ class NavbarBody extends StatelessWidget {
       builder: (context, state) {
           return  Scaffold(
             body: state is NavbarScreenUpdate? _screens[_navbarBloc.index]:_screens[0],
-            bottomNavigationBar: BlocListener<NavbarBloc,NavbarState>(
-              listener: (context, state) {
-                if(_navbarBloc.index == 2){
+            bottomNavigationBar: Navbar(
+              selectedIndex: state is NavbarScreenUpdate? _navbarBloc.index : 0,
+              onTap: (value){
+                if(value == 2){
                   Navigator.pushNamed(context, AppRoute.cartScreen);
+                }else{
+                  _navbarBloc.add(NavbarChangeEvent(index: value));
                 }
               },
-              child: Navbar(
-                selectedIndex: state is NavbarScreenUpdate? _navbarBloc.index : 0,
-                onTap: (value){
-                  _navbarBloc.add(NavbarChangeEvent(index: value));
-                  print(_navbarBloc.index);
-                },
-              ),
             ),
           );
       },

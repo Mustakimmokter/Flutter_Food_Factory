@@ -9,20 +9,27 @@ class CustomContainer extends StatelessWidget {
     this.child,
     this.margin,
     this.padding,
-    this.borderRadius,
+    this.radius,
     this.height,
     this.width,
     this.offset,
     this.isShadow = false,
+    this.borderRadius,
     this.blurRadius,
+    this.alignment,
+    this.borderColor,
+    this.isBorder = false,
+    this.borderWidth,
   }) : super(key: key);
 
-  final Color? color, shadowsColor;
+  final Color? color, shadowsColor, borderColor;
   final Widget? child;
   final EdgeInsetsGeometry? margin, padding;
-  final double? borderRadius, height, width,blurRadius;
+  final double? radius, height, width,blurRadius,borderWidth;
   final Offset? offset;
-  final bool? isShadow;
+  final bool? isShadow,isBorder;
+  final BorderRadius? borderRadius;
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +38,11 @@ class CustomContainer extends StatelessWidget {
       padding: padding,
       height: height,
       width: width,
+      alignment: alignment,
       decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(borderRadius ?? 15),
+          color: isBorder!? Colors.transparent : color,
+          border: Border.all(width: borderWidth ?? 1.5,color: isBorder! ? borderColor ?? greyBackground : Colors.transparent),
+          borderRadius: borderRadius ?? BorderRadius.circular(radius ?? 15),
           boxShadow: isShadow!
               ? [
                   BoxShadow(

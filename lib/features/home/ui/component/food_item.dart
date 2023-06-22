@@ -34,7 +34,6 @@ class FoodItem extends StatelessWidget {
             ),
             CustomText(
               text: title,
-              size: 15,
               color: greyColor,
             ),
           ],

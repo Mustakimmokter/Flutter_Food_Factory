@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_factory/features/on_board_screen/ui/component/onboard_body.dart';
+import 'package:food_factory/features/on_board/ui/component/onboard_body.dart';
 import 'package:food_factory/shared/infrastructure/app_route.dart';
 
 class OnBoardScreenThree extends StatelessWidget {

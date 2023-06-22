@@ -7,12 +7,12 @@ class RoundedButton extends StatelessWidget {
     Key? key,
     required this.onTap,
     this.title,
-    this.icon,
+    this.assetIcon,
     this.size = 55,
   }) : super(key: key);
 
   final VoidCallback onTap;
-  final String? icon,title;
+  final String? assetIcon,title;
   final double? size;
 
   @override
@@ -26,7 +26,7 @@ class RoundedButton extends StatelessWidget {
       highlightElevation: 0,
       elevation: 0,
       onPressed: onTap,
-      child: icon != null? SvgPicture.asset(icon!) : Text(
+      child: assetIcon != null? SvgPicture.asset(assetIcon!) : Text(
       title!,
       style: TextStyle(
         color: Colors.white,
