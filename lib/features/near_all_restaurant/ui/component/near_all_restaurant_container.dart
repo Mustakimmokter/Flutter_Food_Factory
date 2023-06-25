@@ -17,15 +17,15 @@ class NearRestaurantsContainer extends StatelessWidget {
     return ListContainer(
       margin: EdgeInsets.only(bottom: 20),
       width: SizeUtils.screenWidth,
-      height: SizeUtils.screenHeight / 7.5,
+      //height: SizeUtils.screenHeight / 7.5,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Align(
-            child: CustomSVG(svg: 'icons/popular_foods/burger_icon.svg', width: 70),
+            child: CustomSVG(svg: 'icons/popular_foods/burger_icon.svg', width: 75),
             alignment: Alignment.centerLeft,
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 14),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,6 +52,7 @@ class NearRestaurantsContainer extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 3),
                 CustomText(
                   align: TextAlign.start,
                   text: '\$\$ Fastfood, Cafe Shop',
@@ -74,7 +75,7 @@ class NearRestaurantsContainer extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(),
+                SizedBox(height: 3),
                 Row(
                   children: [
                    _textContainer('2.0 km'),

@@ -22,11 +22,57 @@ class HomeScreen extends StatelessWidget {
           HomeHeader(
             name: 'Mustakim',
             location: 'Narsingdi',
-            profilePic: 'images/Image_p.jpg',
+            profilePic: 'images/sodipto.jpg',
             onProfile: (){
               showModalBottomSheet(
                 context: context,
-                builder: (context) => CustomBottomSheet(),
+                isDismissible: false,
+                constraints: BoxConstraints(
+                    maxHeight: SizeUtils.screenHeight / 1.27,
+                ),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                ),
+                isScrollControlled: true,
+                builder: (context) => Padding(
+                  padding: const EdgeInsets.only(top: 10,left: 20,right: 20,bottom: 20),
+                  child: Column(
+                    children: [
+                      const CustomContainer(
+                        margin: EdgeInsets.only(bottom: 10),
+                        height: 6,
+                        width: 50,
+                        color: Color(0xffC4C4C4),
+                      ),
+                      Row(
+                        children: [
+                          CustomIconButton(
+                            child: const Icon(Icons.arrow_back_ios,size: 18,),
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                          ),
+                          const CustomText(text: 'My Profile',size: 18,fontWeight: FontWeight.w700,)
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      const ProfileContainer(
+                        proPic: 'images/sodipto.jpg',
+                        size: 70,
+                      ),
+                      SizedBox(height: 10),
+                      CustomText(text: 'Sudipto Saha',size: 17),
+                      SizedBox(height: 40),
+                      _textAndRowButton('My Order',(){},),
+                      _textAndRowButton('payment method',(){},),
+                      _textAndRowButton('My Address',(){}),
+                      _textAndRowButton('Phone Number',(){}),
+                      _textAndRowButton('Email Address',(){}),
+                      _textAndRowButton('Help',(){}),
+
+                    ],
+                  ),
+                ),
               );
             },
           ),
@@ -36,9 +82,17 @@ class HomeScreen extends StatelessWidget {
                 SearchBarAndFilter(
                   filter: () {
                     showModalBottomSheet(
+                      //backgroundColor: Colors.red,
                       context: context,
+                      constraints: BoxConstraints(
+                        maxHeight: SizeUtils.screenHeight / 1.27,
+                      ),
+                      isScrollControlled: true,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(30))
+                      ),
                       builder: (context) {
-                        return CustomBottomSheet();
+                        return const FilterContainer();
                       },
                     );
                   },
@@ -134,6 +188,23 @@ class HomeScreen extends StatelessWidget {
       drawer: Container(
         color: whiteBackground,
         width: SizeUtils.screenWidth - SizeUtils.screenWidth / 4,
+      ),
+    );
+  }
+
+  Widget _textAndRowButton(String title,VoidCallback onTap){
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CustomText(text: title,size: 15,),
+          CustomIconButton(
+            padding: 0,
+            onTap: onTap,
+            child: const Icon(Icons.arrow_forward_ios,size: 18,),
+          ),
+        ],
       ),
     );
   }

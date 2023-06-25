@@ -20,12 +20,12 @@ class FoodDetailsScreen extends StatelessWidget {
           Positioned(
             left: 20,
             right: 20,
-            top: 70,
-            child: Image.asset('assets/images/burger_illustration.png',height: 200),
+            top: 65,
+            child: Image.asset('assets/images/burger_illustration.png',height: 180),
           ),
           CustomContainer(
-            margin: EdgeInsets.only(top: SizeUtils.screenHeight / 2.8),
-            padding: EdgeInsets.all(20),
+            margin: EdgeInsets.only(top: SizeUtils.screenHeight / 3.1),
+            padding: EdgeInsets.only(left: 20,right: 20,top: 20),
             width: double.maxFinite,
             color: whiteBackground,
             borderRadius: const BorderRadius.vertical(
@@ -41,14 +41,14 @@ class FoodDetailsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 CustomText(text: 'Classic burger',size: 17,fontWeight: FontWeight.w700,),
-                SizedBox(height: 20),
+                SizedBox(height: 12),
                 CustomText(text: 'Fresh and healthy burger made with our own chef recipe. Special healthy and dish for those who want to gain weight  A Special Rolls, beef steak mince, olive oil, egg, onion, tomato. ',
                   size: 14,
                   color: greyColor,
                   fontWeight: FontWeight.normal,
                   align: TextAlign.start,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 14),
                 Row(
                   children: [
                     Icon(Icons.location_on_outlined,size: 18,),
@@ -88,7 +88,7 @@ class FoodDetailsScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 CustomContainer(
                   padding: EdgeInsets.all(10),
-                  height: 70,
+                  height: 65,
                   width: double.maxFinite,
                   isBorder: true,
                   radius: 10,
@@ -122,14 +122,107 @@ class FoodDetailsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 15),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(text: 'Add Extras :',size: 15,fontWeight: FontWeight.w700,color: greyColor,),
+                    SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomContainer(
+                          margin: EdgeInsets.only(right: 8),
+                          padding: EdgeInsets.all(1),
+                          width: 16,
+                          height: 16,
+                          color: primaryBrandColor,
+                          child: CustomContainer(
+                            isBorder: true,
+                            borderColor: whiteColor,
+                          ),
+                        ),
+                        CustomText(text: 'Mashroom',size: 14,color: greyColor,),
+                        Expanded(
+                          child: CustomContainer(margin: EdgeInsets.symmetric(horizontal: 5),color: greyBackground,height: 2,radius: 0,)
+                          ,),
+                        CustomText(text: '\$2.00',size: 14,color: greyColor,),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomContainer(
+                          margin: EdgeInsets.only(right: 8),
+                          padding: EdgeInsets.all(1),
+                          width: 16,
+                          height: 16,
+                          isBorder: true,
+                          borderColor: greyColor,
+                          borderWidth: 4,
+                        ),
+                        CustomText(text: 'Mashroom',size: 14,color: greyColor,),
+                        Expanded(
+                          child: CustomContainer(margin: EdgeInsets.symmetric(horizontal: 5),color: greyBackground,height: 2,radius: 0,)
+                          ,),
+                        CustomText(text: '\$2.00',size: 14,color: greyColor,),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomContainer(
+                          margin: EdgeInsets.only(right: 8),
+                          padding: EdgeInsets.all(1),
+                          width: 16,
+                          height: 16,
+                          isBorder: true,
+                          borderColor: greyColor,
+                          borderWidth: 4,
+                        ),
+                        CustomText(text: 'Mashroom',size: 14,color: greyColor,),
+                        Expanded(
+                          child: CustomContainer(margin: EdgeInsets.symmetric(horizontal: 5),color: greyBackground,height: 2,radius: 0,)
+                          ,),
+                        CustomText(text: '\$2.00',size: 14,color: greyColor,),
+                      ],
+                    ),
+                  ],
+                ),
 
               ],
             ),
           ),
           const Positioned(
-            right: 20,
+            right: 30,
             child: CartQuantityContainer(
               quantity: '12',
+            ),
+          ),
+          Positioned(
+            left: 20,
+            right: 20,
+            bottom: 20,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+               Row(
+                 crossAxisAlignment: CrossAxisAlignment.end,
+                 children: [
+                   CustomText(text: 'Price',color: greyColor,),
+                   CustomText(text: ' \$12.30',size: 17,fontWeight: FontWeight.w700,),
+                 ],
+               ),
+                SizedBox(width: 20,),
+                Expanded(
+                  child: FooterButton(
+                    onTap: (){},
+                    title: 'Add to cart',
+                  ),
+                ),
+              ],
             ),
           ),
         ],

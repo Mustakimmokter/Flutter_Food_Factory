@@ -10,7 +10,7 @@ class CartQuantityContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
-      margin: EdgeInsets.only(top: SizeUtils.screenHeight/ 3.05),
+      margin: EdgeInsets.only(top: SizeUtils.screenHeight / 3.4),
       height: 45,
       width: 45,
       radius: 100,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_factory/shared/utils/utils.dart';
 import 'package:food_factory/shared/widgets/index.dart';
 
-class PopularFoodHeader extends StatelessWidget {
-  const PopularFoodHeader({Key? key}) : super(key: key);
+class CartHeader extends StatelessWidget {
+  const CartHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class PopularFoodHeader extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          CustomText(text: 'PopularFoods',size: 18,)
+          CustomText(text: 'My Cart',size: 18,)
         ],
       ),
     );

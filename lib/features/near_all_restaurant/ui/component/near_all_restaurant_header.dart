@@ -12,12 +12,12 @@ class NearAllRestaurantHeader extends StatelessWidget {
       child: Row(
         children: [
           CustomIconButton(
-            child: Icon(Icons.arrow_back_ios),
+            child: Icon(Icons.arrow_back_ios,size: 18,),
             onTap: (){
               Navigator.pop(context);
             },
           ),
-          CustomText(text: 'Nearby Restautant')
+          CustomText(text: 'Nearby Restautant',size: 18,)
         ],
       ),
     );

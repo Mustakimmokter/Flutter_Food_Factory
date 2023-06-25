@@ -6,12 +6,13 @@ class ProfileContainer extends StatelessWidget {
     required this.proPic,
     this.isNetworkImage = false,
     this.onTap,
+    this.size,
   }) : super(key: key);
 
   final String proPic;
   final bool? isNetworkImage;
   final VoidCallback? onTap;
-  // final double? height, width;
+  final double? size;
   // final Color? containerColor;
 
   @override
@@ -19,8 +20,8 @@ class ProfileContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 38,
-        width: 38,
+        height: size ?? 38,
+        width: size ?? 38,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
           border: Border.all(color: primaryBrandColor),

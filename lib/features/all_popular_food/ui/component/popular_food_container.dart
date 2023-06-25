@@ -26,7 +26,7 @@ class PopularFoodContainer extends StatelessWidget {
     return ListContainer(
       margin: const EdgeInsets.only(bottom: 20),
       width: SizeUtils.screenWidth,
-      height: SizeUtils.screenHeight / 6,
+      //height: SizeUtils.screenHeight / 6,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

@@ -6,7 +6,7 @@ class ListContainer extends StatelessWidget {
 
     required this.width,
     required this.child,
-    this.height = 130,
+    this.height,
     this.color = Colors.white,
     this.margin,
     this.padding,
@@ -16,7 +16,7 @@ class ListContainer extends StatelessWidget {
     this.isShadow = false,
   }) : super(key: key);
 
-  final double height, width;
+  final double? height, width;
   final Widget child;
   final EdgeInsetsGeometry? margin, padding;
   final Color? color;
